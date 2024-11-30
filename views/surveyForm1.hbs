@@ -1,0 +1,170 @@
+
+ <h5 class="nHaed"> Welcome {{name}}, please fill your actual info.</h5>
+
+<div class="card">
+ 
+  <section class="survey-form" id="form1">
+    <div class="row">
+      <fieldset class="set1" id="section1">
+
+        <legend><span class="number">1</span>Your Basic Info</legend>
+        <h1> </h1>
+        <form class="col s12" action="/submit-form1" method="POST" enctype="multipart/form-data">
+          <div class="row">
+            <div class="input-field col s6">
+              <input type="hidden" name="googleUserId" value="{{g_id}}">
+              <input id="first_name" name="f_Name" type="text" class="validate" required>
+              <label for="first_name">First Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="last_name" name="l_Name" type="text" class="validate" required>
+              <label for="last_name">Last Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="mobile" name="mobile" type="tel" pattern="[0-9]{10}" required class="validate">
+              <label for="mobile">Enter your Mobile Number</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="email" name="email" type="email" class="validate" required>
+              <label for="email">Enter your Email</label>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6" id="age">
+              <label for="det" id="det-label"> Select your Date of Birth</label>
+              <input id="det" name="dOB" type="text" class="datepicker" required>
+            </div>
+            <div class="input-field col s6">
+              <select id="ageGroup" name="ageGroup" required>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="18-25">18-25</option>
+                <option value="26-30">26-30</option>
+                <option value="30-40">30-40</option>
+                <option value="41-65">41-65</option>
+                <option value="above 65">Above 65</option>
+              </select>
+              <label>Select your Age group</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6" id="gender">
+              <select id="gender" name="gender" required>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Trans">Transgender</option>
+              </select>
+              <label>Select your Gender</label>
+            </div>
+
+            <div class="input-field col s6">
+              <select id="ocopation" name="occupation" required>
+                <option value="" disabled selected>Choose your Profession</option>
+                <option value="GovernmentJob">Government job</option>
+                <option value="PrivateJob">Private job</option>
+                <option value="Business">Business</option>
+                <option value="SmallBusiness">Small Business</option>
+                <option value="Student">Student</option>
+                <option value="Artist">Artist</option>
+                <option value="Others">Others</option>
+              </select>
+              <label>Select your Profession</label>
+            </div>
+          </div>
+
+          <div class="row" id="mg" style="display:none;">
+            <div class="input-field col s12">
+              <input id="moreAbout_govt" type="text" class="validate">
+              <label for="moreAbout_govt"><i class="fas fa-info-circle tooltipped" data-position="top"
+                  data-tooltip="Include details about your Central or State govt. job, sector, job role, experience, and key responsibilities."></i>
+                More about your Government Job. </label>
+
+            </div>
+          </div>
+          <div class="row" id="mp" style="display:none;">
+            <div class="input-field col s12">
+              <input id="moreAbout_pvt" type="text" class="validate">
+              <label for="moreAbout_govt"><i class="fas fa-info-circle tooltipped" data-position="top"
+                  data-tooltip="Include details about your Sector,  Any Company or Self Emplyed, job role, experience, and key responsibilities."></i>
+                More about your Private Job. </label>
+
+            </div>
+          </div>
+          <div class="row" id="b" style="display:none;">
+            <div class="input-field col s12">
+              <input id="moreAbout_busines" type="text" class="validate">
+              <label for="moreAbout_busines"><i class="fas fa-info-circle tooltipped" data-position="top"
+                  data-tooltip="Include details about your Trade or Sector, Distributor, Deler or Wholesaler, product, No of employee, and Turnover"></i>
+                More about your Business. </label>
+
+            </div>
+          </div>
+          <div class="row" id="Sb" style="display:none;">
+            <div class="input-field col s12">
+              <input id="moreAbout_Sb" type="text" class="validate">
+              <label for="moreAbout_Sb"><i class="fas fa-info-circle tooltipped" data-position="top"
+                  data-tooltip="Include details about your Trade or Sector, product (i.e. General Store, Tea Shop, Vegitable sotre), No of employee, and Turnover"></i>
+                More about your Small Business. </label>
+
+            </div>
+          </div>
+          <div class="row" id="student" style="display:none;">
+            <div class="input-field col s12">
+              <input id="moreAbout_student" type="text" class="validate">
+              <label for="moreAbout_student"><i class="fas fa-info-circle tooltipped" data-position="top"
+                  data-tooltip="Include details about your Education (B.A./M.A./phd) Trade or Subject (i.e. geography, history, Sanskrit or Science, IT , Law , Atrs, journalism), product (i.e. engineering, medical, AI,  Law , Atrs)"></i>
+                More about your Education. </label>
+            </div>
+          </div>
+          <div class="row" id="artist" style="display:none;">
+            <div class="input-field col s12">
+              <input id="moreAbout_artist" type="text" class="validate">
+              <label for="moreAbout_artist"><i class="fas fa-info-circle tooltipped" data-position="top"
+                  data-tooltip="Include details about your Sector (Duncing, Singing, Acting, Anchoring, News Anchor, journalist) Social media Influencer"></i>
+                More about your Artistic Skill. </label>
+            </div>
+          </div>
+          <div class="row" id="others" style="display:none;">
+            <div class="input-field col s12">
+              <input id="moreAbout_others" type="text" class="validate">
+              <label for="moreAbout_others"><i class="fas fa-info-circle tooltipped" data-position="top"
+                  data-tooltip="Include details about your Profession or Skill whatever that is.."></i>
+                More about your Others Profession. </label>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="address" name="address" type="text" class="validate" required>
+              <label for="address">Enter your current address.</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="row valign-wrapper">
+              <div class="col s6">
+                <label for="userImage" class="lbl_img">Upload or Capture Image</label>
+              </div>
+              <div class=" col s6">
+                <input id="userImage" name="userImage" type="file" accept="image/*" capture="environment"
+                  style="width: 100%;">
+              </div>
+            </div>
+            <img id="preview" src="#" alt="Image preview" style="display: none; max-width: 100%;" />
+          </div>
+
+
+          <button class="btn waves-effect waves-light purple" type="submit" name="action"> Next </button>
+        </form>
+
+
+      </fieldset>
+
+
+    </div>
+  </section>
+</div>

@@ -1,0 +1,186 @@
+  body {
+    font-family: 'Nunito', sans-serif;
+    color: #384047;
+  }
+  
+  .survey-form {
+    display: flex ;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  
+  h1 {
+    margin: 0 0 10px 0;
+    text-align: center;
+  }
+
+  .gap{
+    margin: 0 0 8px 0;
+  }
+
+  
+  .age .input-field{
+margin-bottom: .5rem;
+  }
+
+ 
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="url"],
+  textarea,
+  select {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    font-size: 16px;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding: 18px;
+    width: 100%;
+    background-color: #e8eeef;
+    color: #8a97a0;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
+  }
+  
+  
+  
+  select {
+    padding: 6px;
+    height: 35px;
+    border-radius: 2px;
+  }
+  
+  .btn {
+    
+    color: #FFF;
+    background-color: #4bc970;
+    font-size: 15px;
+    text-align: center;
+    font-style: normal;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid #3ac162;
+    border-width: 1px 1px 3px;
+    box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+    margin-bottom: 10px;
+  }
+  
+  fieldset {
+    margin-bottom: 30px;
+    border: none;
+  }
+  
+  legend {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  label.light {
+    font-weight: 300;
+    display: inline;
+  }
+  
+  .number {
+    background-color: #5fcf80;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    border-radius: 100%;
+  }
+  
+  @media screen and (min-width: 480px) {
+  
+    form {
+      max-width: 600px;
+    }
+    
+  
+  }
+
+    /* dashboard */
+.nameHead{
+  text-align: center;
+}
+
+.survey-form {
+  padding: 0px 30px 0px 30px;
+  
+}
+
+
+@media (min-width:768px) {
+  
+}
+
+.valign-wrapper .lbl_img{
+  padding-left: 10px;
+  font-size: 15px;
+}
+
+
+
+/* Footer Styles */
+.custom-footer {
+  background-color: #ff7722;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  position: relative;
+  /* Ensures it sticks to the bottom */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* Stretches the footer to full page width */
+}
+
+.custom-footer .footer-content p {
+  margin: 0;
+}
+
+.custom-footer .footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+.custom-footer .footer-links li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.custom-footer .footer-links a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.custom-footer .footer-links a:hover {
+  text-decoration: underline;
+}
+
+.nHaed {
+  text-align: center;
+  font-size: 20px;  
+  display: flex;
+  align-items: center ;
+  justify-content: center;
+}

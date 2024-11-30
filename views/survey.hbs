@@ -1,0 +1,74 @@
+<section id="logon" class="logon">
+    <div class="container login-container">
+        <div class="crad">
+            <div class="card-contain">
+                <div class="logo">
+                    <h3> <i class="fa-solid fa-clipboard-list"></i></h3>
+                </div>
+                <div class="slogan">
+                    <h3>Your Voice is <br> Your Strength,<br> to Increase<br> Your Strength</h3>
+                </div>
+
+
+                <div class="section">
+                    <h3 class="lead">Authenticate<br> Yourself <br>& perticipate</h3>
+                </div>
+                <div class="divider"></div>
+
+                <!-- Checkbox for Verification -->
+                <div id="cBox" class="blink">
+                    <div class="checkbox-wrapper-4">
+                        <input class="inp-cbx" id="morning" type="checkbox" />
+                        <label class="cbx" for="morning"><span>
+                                <svg width="12px" height="10px">
+                                    <use xlink:href="#check-4"></use>
+                                </svg></span><span></span> <span>If you are a proud Hindu, please <br> check it out so
+                                it can be started.</span></label>
+                        <svg class="inline-svg">
+                            <symbol id="check-4" viewbox="0 0 12 10">
+                                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                            </symbol>
+                        </svg>
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- Button Section -->
+                <div class="sectionbtn">
+                    <a href="/auth/google?redirect={{redirect}}" class="btn disabled" id="login-btn">
+                    
+                        <i class="fab fa-google left"> </i> Login with Google
+                    </a>
+
+
+                </div>
+            </div>
+            
+            <!-- Admin Login Section -->
+        <div class="admn-login">
+          <button class="button" id="admin-login-btn">
+            <i class="fa-solid fa-user"></i> Admin Login
+          </button>
+        </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+  <div id="admin-login-modal" class="modal hidden">
+    <div class="modal-content">
+      <h5>Use Credential</h5>
+      <form id="admin-login-form">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+
+        <button type="submit" class="button">Login</button>
+      </form>
+    </div>
+  </div>
+</section>

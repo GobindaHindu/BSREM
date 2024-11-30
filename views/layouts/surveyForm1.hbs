@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    integrity="sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- font awesome file link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+
+
+
+  <!-- custom css file link -->
+  <link rel="stylesheet" href="/css/ques.css">
+
+ 
+  <title>Survey</title>
+
+</head>
+
+<body>
+  {{>header-all}}
+  {{{body}}}
+  {{>footer}}
+
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script>
+    M.Sidenav.init(document.querySelector('.sidenav'))
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('select');
+      M.FormSelect.init(elems);
+
+      var info = document.querySelectorAll('.tooltipped');
+      M.Tooltip.init(info);
+
+      const date = document.querySelectorAll('.datepicker');
+      const dobLabel = document.getElementById('det-label');
+      const dobPicker = document.getElementById('det');
+
+      const options = {
+        yearRange: [1960, 2014],
+        defaultDate: new Date(2010, 0, 1),  // Sets a default date if desired
+        setDefaultDate: false,        // Ensures the default date is set when the picker opens
+        onClose: function () {  // Event fires when date picker closes
+          if (dobPicker.value) {
+            dobLabel.textContent = 'Your Date of Birth';
+          } else {
+            M.toast({ html: 'Please select a date', classes: 'rounded' });
+          }
+        }
+      }
+      M.Datepicker.init(date, options);
+
+      // first name / last name
+      const fLabel = document.getElementById('first_name');
+      const lLabel = document.getElementById('last_name');
+      const mLabel = document.getElementById('mobile');
+      const mLabelText = document.querySelector("label[for='mobile']");  // Selects the label for the mobile input
+
+      mLabel.addEventListener('change', function () {
+        if (mLabel.value) {
+          mLabelText.textContent = 'Mobile Number'; // Changes label text when a value is entered
+        }
+      });
+      const eLabel = document.getElementById('email');
+      const eLabelText = document.querySelector("label[for='email']"); // Selects the label for the email input
+
+      eLabel.addEventListener('change', function () {
+        if (eLabel.value) {
+          eLabelText.textContent = 'Your Email'; // Changes label text when a value is entered
+        }
+      });
+    });
+
+    //select profesion and option
+
+
+
+    document.getElementById("ocopation").addEventListener("change", function () {
+      const selectedOption = this.value;
+
+      // All text field containers
+      const textFields = {
+        GovernmentJob: document.getElementById("mg"),
+        PrivateJob: document.getElementById("mp"),
+        Business: document.getElementById("b"),
+        SmallBusiness: document.getElementById("Sb"),
+        Student: document.getElementById("student"),
+        Artist: document.getElementById("artist"),
+        Others: document.getElementById("others")
+      };
+
+      // Remove `required` and `name` from all fields, hide all containers
+      Object.values(textFields).forEach(fieldContainer => {
+        fieldContainer.style.display = "none";
+        const input = fieldContainer.querySelector("input");
+        input.removeAttribute("name");
+        input.removeAttribute("required");
+      });
+
+      // Show the selected field's container, set `name` and `required` on input
+      if (textFields[selectedOption]) {
+        const activeFieldContainer = textFields[selectedOption];
+        const activeInput = activeFieldContainer.querySelector("input");
+
+        activeFieldContainer.style.display = "block"; // Show the selected container
+        activeInput.setAttribute("name", "moreAbout"); // Set name to 'moreAbout'
+        activeInput.setAttribute("required", "required"); // Make the field required
+      }
+    });
+
+
+
+
+
+
+
+  </script>
+
+  <script>
+    // Assuming `form1Completed` is passed as a boolean to the template
+    const form1Completed = {{ form1Completed }};
+    if (form1Completed) {
+      window.location.href = "/surveyForm2";  // Redirect to form2
+    }
+  </script>
+
+
+  <script src="/js/imageUpload.js"></script>
+</body>
+
+</html>

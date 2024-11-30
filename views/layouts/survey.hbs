@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    integrity="sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+  <link rel="stylesheet" href="/css/all.css">
+  <title>Register </title>
+
+</head>
+
+<body>
+  {{>header-all}}
+  {{{body}}}
+  {{>footer}}
+
+
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script>
+    M.Sidenav.init(document.querySelector('.sidenav'))
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const checkbox = document.getElementById("morning");
+      const button = document.getElementById("login-btn");
+      M.toast({ html: 'Please check the box to Proceed', classes: 'rounded' });
+
+      // Disable the button by default
+      button.classList.add("disabled");
+
+      // Enable or disable button based on checkbox state
+      checkbox.addEventListener("change", function () {
+        if (checkbox.checked) {
+          button.classList.remove("disabled");
+        } else {
+          button.classList.add("disabled");
+        }
+      });
+
+      // Check if checkbox is not checked, show toast notification
+      button.addEventListener("click", function (event) {
+        if (!checkbox.checked) {
+          event.preventDefault(); // Prevent the link from redirecting
+
+        } else {
+          // Disable button after click
+          button.classList.add("disabled");
+          checkbox.disabled = true; // Disable checkbox to prevent re-enabling
+        }
+      });
+    });
+
+    // JavaScript to stop blinking when the checkbox is checked
+document.addEventListener('DOMContentLoaded', () => {
+  const checkbox = document.getElementById('morning');
+  const cBox = document.getElementById('cBox');
+  const labelText = document.querySelector('.checkbox-wrapper-4 label span:last-child');
+
+  checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+      cBox.classList.remove('blink'); // Stop blinking
+      cBox.classList.add('checked'); // Apply the "checked" styling
+      labelText.textContent = "Yes, I am a Proud Hindu. Let's Start!"; // Change the label text
+    } else {
+      cBox.classList.remove('checked'); // Remove "checked" styling
+      cBox.classList.add('blink'); // Resume blinking if unchecked
+      labelText.textContent = "Please Tick it so, it can be started."; // Reset the label text
+    }
+  });
+});
+  </script>
+<script src="/js/adminLogin.js"></script>
+
+
+</body>
+
+</html>

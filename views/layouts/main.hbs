@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <!-- font awesome file link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <link rel="stylesheet" href="/css/style.css">
+  <title>BSREM</title>
+</head>
+
+<body>
+
+
+  <div>
+    {{>header}}    
+    {{{body}}}
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+  <!-- jquery file link -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  <script src="/js/smoothScroll.js"></script>
+  <script src="/js/translate.js"></script>
+  <script src="/js/openModal.js"></script>
+
+  <!-- js code -->
+  <script>
+    $(document).ready(function () {
+      $('.fa-bars').click(function () {
+        $(this).toggleClass('fa-times')
+        $('.navbar').toggleClass('nav-toggle')
+        // Call custom function here
+        customFunction();
+      })
+
+      // Custom function to be executed when hamburger menu is clicked
+      function customFunction() {
+        $('.header .logo').css('font-size', '170%');  // Adjust as needed
+
+
+      }
+
+      $(window).on('load scroll', function () {
+        $('.fa-bars').removeClass('fa-times')
+        $('.navbar').removeClass('nav-toggle')
+
+        if ($(window).scrollTop() > 30) {
+          $('.header').css({ 'background': '#e67300', 'box-shadow': '0 .2rem .5rem rgba(0,0,0,.4)' });
+          $('.logo').css({ 'font-size': '160%' })
+        } else {
+          $('.header').css({ 'background': 'none', 'box-shadow': 'none' });
+          $('.logo').css({ 'font-size': '200%' })
+        }
+      })
+
+      $('.accordion-header').click(function () {
+        $('.accordion .accordion-body').slideUp();
+        $(this).next('.accordion-body').slideDown();
+        $('.accordion .accordion-header span').text('+');
+        $(this).children('span').text('-');
+      });
+
+
+    })
+
+    var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+
+{{!-- 
+document.querySelector('#contactForm').addEventListener('submit', async (event) => {
+    event.preventDefault(); // Prevent default form submission
+
+    const formData = new FormData(event.target);
+
+    try {
+        const response = await fetch('/contact', {
+            method: 'POST',
+            body: formData,
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            alert(result.message); // Show success message
+            window.location.href = '/'; // Redirect to the home page
+        } else {
+            alert('Failed to send your message. Please try again.');
+        }
+    } catch (error) {
+        console.error('Error submitting form:', error);
+        alert('An unexpected error occurred. Please try again later.');
+    }
+}); --}}
+
+{{!-- document.querySelector('#contactForm').addEventListener('submit', async (event) => {
+    event.preventDefault(); // Prevent default form submission
+
+    const formData = new FormData(event.target);
+
+    try {
+        const response = await fetch('/contact', {
+            method: 'POST',
+            body: formData, // Send FormData directly
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            alert(result.message); // Show success message
+            window.location.href = '/'; // Redirect to the home page
+        } else {
+            alert('Failed to send your message. Please try again.');
+        }
+    } catch (error) {
+        console.error('Error submitting form:', error);
+        alert('An unexpected error occurred. Please try again later.');
+    }
+}); --}}
+
+document.querySelector('#contactForm').addEventListener('submit', async (event) => {
+    event.preventDefault(); // Prevent default form submission
+
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries()); // Convert FormData to plain object
+
+    try {
+        const response = await fetch('/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json', // Set JSON content type
+            },
+            body: JSON.stringify(data), // Send data as JSON
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            alert(result.message); // Show success message
+            window.location.href = '/'; // Redirect to the home page
+        } else {
+            alert('Failed to send your message. Please try again.');
+        }
+    } catch (error) {
+        console.error('Error submitting form:', error);
+        alert('An unexpected error occurred. Please try again later.');
+    }
+});
+
+
+
+
+
+
+
+
+
+
+  </script>
+
+
+</body>
+
+</html>

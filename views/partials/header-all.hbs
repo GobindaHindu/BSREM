@@ -1,0 +1,29 @@
+<header class="custom-nav">
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo center"> B.S.R.E.M. </a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"> <i class="fas fa-bars"></i>
+            </a>
+            <ul id="mobile-demo" class="sidenav">
+                <li><a href="/donate">Donate</a></li>
+                <li><a href="/join">Join Us</a></li>
+                <li><a href="/#contact" class="scroll-link">Contact</a></li>
+                <li><a href="/forum">Forum</a></li>
+
+                {{#if hideLogin}}
+                <!-- Do not render Login or Logout links -->
+                {{else}}
+                {{#if user}}
+                <li><a href="/auth/logout">Logout</a></li>
+                {{else}}
+                <li><a href="/auth/google?redirect={{redirect}}">Login</a></li>
+                {{/if}}
+                {{/if}}
+
+            </ul>
+        </div>
+    </nav>
+</header>
+{{!-- <script>
+    console.log("User is: {{user}}");
+</script> --}}
